@@ -1,0 +1,58 @@
+<h3 class="text-center">Edit Data</h3>
+<div class="container-fluid bottom-container mt-5">
+  <div class="container bottom-content">
+    <div class="row">
+      <div class="col-12">
+        <form (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label class="text" for="name">Name</label>
+            <br>
+            <input id="name" name="name" type="text" [(ngModel)]="name"/>
+          </div>
+
+          <div class="form-group">
+            <label class="text" for="sex">Sex</label>
+            <br>
+            <select class="form-control" id="sex" name="sex" [(ngModel)]="sex">
+              <option value="602f88fbb931212290a72770">Female</option>
+              <option value="602f88f3b931212290a7276f">Male</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="text" for="name">House Number</label>
+            <br>
+            <input id="houseNumber" name="houseNumber" type="text" [(ngModel)]="number"/>
+          </div>
+
+          <div class="form-group">
+            <label class="text" for="street">Street</label>
+            <br>
+            <input id="street" name="street" type="text" [(ngModel)]="street"/>
+          </div>
+
+          <div class="form-group">
+            <label class="text" for="city">City</label>
+            <br>
+            <input id="city" name="city" type="text" [(ngModel)]="city"/>
+          </div>
+
+          <div class="form-group">
+            <label class="text" for="eircode">Eircode</label>
+            <br>
+            <input id="eircode" name="eircode" type="text" [(ngModel)]="eircode"/>
+          </div>
+
+
+
+          <div class="form-group">
+            <input type="submit" name="add" class="btn btn-primary bg-success btn-block"
+                   value="Submit">
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
