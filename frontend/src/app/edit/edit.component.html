@@ -2,10 +2,8 @@
 <div class="container-fluid bottom-container mt-5">
   <div class="container bottom-content">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12" *ngIf="tableData">
         <form [formGroup]="angularForm"  (ngSubmit)="onSubmit(angularForm.value)">
-
-
           <div class="form-group">
             <label class="text" for="name">Name</label>
             <br>
@@ -24,7 +22,7 @@
           <div class="form-group">
             <label class="text" for="name">House Number</label>
             <br>
-            <input id="houseNumber" class="form-control" type="text" formControlName="number"/>
+            <input id="number" class="form-control" type="text" formControlName="number"/>
           </div>
 
           <div class="form-group">

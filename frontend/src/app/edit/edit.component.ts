@@ -26,16 +26,18 @@ export class EditComponent implements OnInit {
       .subscribe( tableData => {
         this.tableData = tableData;
         this.tableData = this.tableData[0];
+        console.log('This is what we get from table data');
         console.log(this.tableData);
 
         this.angularForm = new FormGroup({
-          _id: new FormControl(this.tableData.id),
+          // _id: new FormControl(this.tableData.id),
           name: new FormControl(this.tableData.name),
           sex: new FormControl(this.tableData.sex.id),
           number: new FormControl(this.tableData.address.number),
           street: new FormControl(this.tableData.address.street),
           city: new FormControl(this.tableData.address.city),
           eircode: new FormControl(this.tableData.address.eircode)
+
         });
 
 
@@ -46,18 +48,19 @@ export class EditComponent implements OnInit {
     console.log(this.tableData);
     const editPerson = {
       address: [{
-        _id: this.tableData.address[0]._id,
+        _id: this.tableData.address.id,
         city: person.city,
         number: person.number,
         street: person.street,
         eircode: person.eircode
       }],
-      _id: this.tableData._id,
+      _id: this.tableData.id,
       name: person.name,
       sex: person.sex
     };
+    console.log('This is Edit Person');
     console.log(editPerson);
-    this.peopleService.editPerson(person, this.id);
+    this.peopleService.editPerson(editPerson, this.id);
 
   }
 }
