@@ -31,12 +31,12 @@ export class EditComponent implements OnInit {
 
         this.angularForm = new FormGroup({
           // _id: new FormControl(this.tableData.id),
-          name: new FormControl(this.tableData.name),
-          sex: new FormControl(this.tableData.sex.id),
-          number: new FormControl(this.tableData.address.number),
-          street: new FormControl(this.tableData.address.street),
-          city: new FormControl(this.tableData.address.city),
-          eircode: new FormControl(this.tableData.address.eircode)
+          name: new FormControl(this.tableData.name, Validators.required),
+          sex: new FormControl(this.tableData.sex.id, Validators.required),
+          number: new FormControl(this.tableData.address.number, Validators.required),
+          street: new FormControl(this.tableData.address.street, Validators.required),
+          city: new FormControl(this.tableData.address.city, Validators.required),
+          eircode: new FormControl(this.tableData.address.eircode, [Validators.required, Validators.maxLength(8)])
 
         });
 
