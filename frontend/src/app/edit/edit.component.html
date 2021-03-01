@@ -2,19 +2,18 @@
 <div class="container-fluid bottom-container mt-5">
   <div class="container bottom-content">
     <div class="row">
-      <div class="col-12">
-        <form (ngSubmit)="onSubmit()">
-
+      <div class="col-12" *ngIf="tableData">
+        <form [formGroup]="angularForm"  (ngSubmit)="onSubmit(angularForm.value)">
           <div class="form-group">
             <label class="text" for="name">Name</label>
             <br>
-            <input id="name" name="name" type="text" [(ngModel)]="name"/>
+            <input id="name" name="name" class="form-control" type="text" formControlName="name"/>
           </div>
 
           <div class="form-group">
             <label class="text" for="sex">Sex</label>
             <br>
-            <select class="form-control" id="sex" name="sex" [(ngModel)]="sex">
+            <select class="form-control" id="sex" name="sex" formControlName="sex">
               <option value="602f88fbb931212290a72770">Female</option>
               <option value="602f88f3b931212290a7276f">Male</option>
             </select>
@@ -23,25 +22,25 @@
           <div class="form-group">
             <label class="text" for="name">House Number</label>
             <br>
-            <input id="houseNumber" name="houseNumber" type="text" [(ngModel)]="number"/>
+            <input id="number" class="form-control" type="text" formControlName="number"/>
           </div>
 
           <div class="form-group">
             <label class="text" for="street">Street</label>
             <br>
-            <input id="street" name="street" type="text" [(ngModel)]="street"/>
+            <input id="street" class="form-control" type="text" formControlName="street"/>
           </div>
 
           <div class="form-group">
             <label class="text" for="city">City</label>
             <br>
-            <input id="city" name="city" type="text" [(ngModel)]="city"/>
+            <input id="city" class="form-control" type="text" formControlName="city"/>
           </div>
 
           <div class="form-group">
             <label class="text" for="eircode">Eircode</label>
             <br>
-            <input id="eircode" name="eircode" type="text" [(ngModel)]="eircode"/>
+            <input id="eircode" class="form-control" type="text" formControlName="eircode"/>
           </div>
 
 

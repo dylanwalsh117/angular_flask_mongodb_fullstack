@@ -23,7 +23,7 @@ class PersonAll(Resource):
 @api.route('/api/<api_id>')
 class PersonByID(Resource):
     def get(self, api_id):
-        return jsonify(Person.objects(_id=api_id))
+        return jsonify(crudQuery.form_query(api_id))
 
     def delete(self, api_id):
         Person.objects(_id=api_id).delete()
