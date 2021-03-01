@@ -23,7 +23,11 @@ class PersonAll(Resource):
 @api.route('/api/<api_id>')
 class PersonByID(Resource):
     def get(self, api_id):
-        return jsonify(crudQuery.form_query(api_id))
+        try:
+            return jsonify(crudQuery.form_query(api_id))
+        except Exception as e:
+            return jsonify({'response': 'Sorry, the user id provided does not exist'})
+
 
     def delete(self, api_id):
         Person.objects(_id=api_id).delete()
