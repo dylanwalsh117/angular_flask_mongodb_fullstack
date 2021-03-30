@@ -3,7 +3,7 @@
 ### Technologies:
 * Angular, Flask RESTPlus API and MongoDB
 
-To run the project you will need to do the follwoing:
+### To run the project you will need to do the follwoing:
 
 1. Create MongoDB database.
 2. Ensure database name matches name in config.py
