@@ -1,6 +1,6 @@
 # fullstack_crud_app
 
-## Technologies:
+### Technologies:
 * Angular, Flask RESTPlus API and MongoDB
 
 To run the project you will need to do the follwoing:
